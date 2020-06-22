@@ -1,0 +1,99 @@
+@mixin font($fontSize: $baseFontSize, $lineHeight: $baseLineHeight, $color: false, $fontWeight: false) {
+	font-size: $fontSize;
+	line-height: em($lineHeight, $fontSize);
+	@if($color) {
+		color: $color;
+	}
+	@if($fontWeight) {
+		font-weight: $fontWeight;
+	}
+}
+
+/*
+	@see - https://codepen.io/flodar/pen/erism
+ */
+ @mixin triangle($direction, $sizeH, $sizeV, $color){
+	display: block;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	-moz-transform: scale(.9999);
+
+	@if $direction == top {
+		border-width: 0 $sizeV $sizeH $sizeV;
+		border-color: transparent transparent $color transparent;
+	}
+	@if $direction == bottom{
+		border-width: $sizeV $sizeH 0 $sizeV;
+		border-color: $color transparent transparent transparent;
+	}
+	@if $direction == left{
+		border-width: $sizeV $sizeH $sizeV 0;
+		border-color: transparent $color transparent transparent;
+	}
+	@if $direction == right{
+		border-width: $sizeV 0 $sizeV $sizeH;
+		border-color: transparent transparent transparent $color;
+	}
+	@if $direction == topright{
+		border-width: 0 $sizeH $sizeV 0;
+		border-color: transparent $color transparent transparent;
+	}
+	@if $direction == bottomright{
+		border-width: 0 0 $sizeH $sizeV;
+		border-color: transparent transparent $color transparent;
+	}
+	@if $direction == bottomleft{
+		border-width: $sizeH 0 0 $sizeV;
+		border-color: transparent transparent transparent $color;
+	}
+	@if $direction == topleft{
+		border-width: $sizeH $sizeV 0 0;
+		border-color: $color transparent transparent transparent;
+	}
+}
+
+/*
+	@see - https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+*/
+@mixin word-wrap() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+@mixin resetList($includePaddings: true, $includeMargins: true) {
+	list-style-type: none;
+	@if($includePaddings) {
+		padding: 0;
+	}
+	@if($includeMargins) {
+		margin: 0;
+	}
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin circle($size) {
+	@include size($size);
+	border-radius: 50%;
+}
+
+@mixin resetButton($resetBackground: true, $resetBorders: true, $resetPaddings: true, $resetOutline: true) {
+	@if($resetBackground) {
+		background: transparent;
+	}
+	@if($resetBorders) {
+		border: 0;
+	}
+	@if($resetPaddings) {
+		padding: 0;
+	}
+	@if($resetOutline) {
+		outline: none;
+	}
+}

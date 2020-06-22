@@ -1,0 +1,13 @@
+/*
+	footer styling
+*/
+.footer {
+	@if $fixFooterStrategie == "positioning" {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;	
+	}
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

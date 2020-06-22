@@ -1,0 +1,42 @@
+{
+	"name": "builder",
+	"version": "0.0.1",
+	"description": "build frontend from scratch",
+	"main": "index.js",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development gulp dev",
+		"prod": "cross-env NODE_ENV=production gulp prod"
+	},
+	"author": "rannala",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.5",
+		"babel-loader": "^8.1.0",
+		"browser-sync": "^2.26.7",
+		"del": "^5.1.0",
+		"gulp": "4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-if": "^3.0.0",
+		"gulp-notify": "^3.2.0",
+		"gulp-pug": "^4.0.1",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-svg-sprites": "^4.1.2",
+		"multipipe": "^4.0.0",
+		"node-sass": "^4.13.1",
+		"pug": "^2.0.4",
+		"through2": "^3.0.1",
+		"vinyl-named": "^1.1.0",
+		"webpack-stream": "^5.2.1"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"> 2%",
+		"IE 11"
+	],
+	"dependencies": {
+		"jquery": "^3.5.1",
+		"normalize.css": "^8.0.1"
+	}
+}
